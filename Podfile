@@ -6,5 +6,6 @@ target 'StackOverflowQuestionsProject' do
   # use_frameworks!
 
   # Pods for StackOverflowQuestionsProject
+    pod 'AFNetworking', '~> 2.0’
 
 end

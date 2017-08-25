@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		702918621F4D9CB8009C3BCA /* StackOverflowPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 702918611F4D9CB8009C3BCA /* StackOverflowPost.m */; };
 		70E721051F4D668D00BE1D70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E721041F4D668D00BE1D70 /* main.m */; };
 		70E721081F4D668D00BE1D70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E721071F4D668D00BE1D70 /* AppDelegate.m */; };
 		70E7210B1F4D668D00BE1D70 /* QuestionScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E7210A1F4D668D00BE1D70 /* QuestionScroller.m */; };
@@ -15,9 +16,14 @@
 		70E721131F4D668D00BE1D70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E721111F4D668D00BE1D70 /* LaunchScreen.storyboard */; };
 		70E7211D1F4D6BB100BE1D70 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E7211C1F4D6BB100BE1D70 /* CustomCell.m */; };
 		70E7211F1F4D6C2600BE1D70 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70E7211E1F4D6C2600BE1D70 /* CustomCell.xib */; };
+		9BBF539A32BF7A7DB31D82BF /* libPods-StackOverflowQuestionsProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0730874479D3C3A7C5743073 /* libPods-StackOverflowQuestionsProject.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0730874479D3C3A7C5743073 /* libPods-StackOverflowQuestionsProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StackOverflowQuestionsProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52CBBF6C5384BEF6769321CA /* Pods-StackOverflowQuestionsProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowQuestionsProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflowQuestionsProject/Pods-StackOverflowQuestionsProject.debug.xcconfig"; sourceTree = "<group>"; };
+		702918601F4D9CA2009C3BCA /* StackOverflowPost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StackOverflowPost.h; sourceTree = "<group>"; };
+		702918611F4D9CB8009C3BCA /* StackOverflowPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackOverflowPost.m; sourceTree = "<group>"; };
 		70E721001F4D668D00BE1D70 /* StackOverflowQuestionsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflowQuestionsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E721041F4D668D00BE1D70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70E721061F4D668D00BE1D70 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -31,6 +37,7 @@
 		70E7211B1F4D6BB100BE1D70 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		70E7211C1F4D6BB100BE1D70 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		70E7211E1F4D6C2600BE1D70 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		C5091DE0D9106E43152FBF5D /* Pods-StackOverflowQuestionsProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowQuestionsProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflowQuestionsProject/Pods-StackOverflowQuestionsProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BBF539A32BF7A7DB31D82BF /* libPods-StackOverflowQuestionsProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C37AA7EA694BF4493BED6A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0730874479D3C3A7C5743073 /* libPods-StackOverflowQuestionsProject.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		54FA71DDB19579F51D1075DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				52CBBF6C5384BEF6769321CA /* Pods-StackOverflowQuestionsProject.debug.xcconfig */,
+				C5091DE0D9106E43152FBF5D /* Pods-StackOverflowQuestionsProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		70E720F71F4D668D00BE1D70 = {
 			isa = PBXGroup;
 			children = (
 				70E721021F4D668D00BE1D70 /* StackOverflowQuestionsProject */,
 				70E721011F4D668D00BE1D70 /* Products */,
+				54FA71DDB19579F51D1075DB /* Pods */,
+				0C37AA7EA694BF4493BED6A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +90,7 @@
 		70E721021F4D668D00BE1D70 /* StackOverflowQuestionsProject */ = {
 			isa = PBXGroup;
 			children = (
+				70F6256D1F4D8D3F0085C9C8 /* Model */,
 				70E7211A1F4D6B4200BE1D70 /* CustomCell */,
 				70E721061F4D668D00BE1D70 /* AppDelegate.h */,
 				70E721071F4D668D00BE1D70 /* AppDelegate.m */,
@@ -95,6 +123,15 @@
 			name = CustomCell;
 			sourceTree = "<group>";
 		};
+		70F6256D1F4D8D3F0085C9C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				702918601F4D9CA2009C3BCA /* StackOverflowPost.h */,
+				702918611F4D9CB8009C3BCA /* StackOverflowPost.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,9 +139,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70E721171F4D668D00BE1D70 /* Build configuration list for PBXNativeTarget "StackOverflowQuestionsProject" */;
 			buildPhases = (
+				713FDB1A15273807D8686A0D /* [CP] Check Pods Manifest.lock */,
 				70E720FC1F4D668D00BE1D70 /* Sources */,
 				70E720FD1F4D668D00BE1D70 /* Frameworks */,
 				70E720FE1F4D668D00BE1D70 /* Resources */,
+				42DDB1C9B4881A8DEC6B6282 /* [CP] Embed Pods Frameworks */,
+				C6C36FF81FA00C63A8B78FDC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -162,11 +202,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		42DDB1C9B4881A8DEC6B6282 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StackOverflowQuestionsProject/Pods-StackOverflowQuestionsProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		713FDB1A15273807D8686A0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C6C36FF81FA00C63A8B78FDC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StackOverflowQuestionsProject/Pods-StackOverflowQuestionsProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		70E720FC1F4D668D00BE1D70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				702918621F4D9CB8009C3BCA /* StackOverflowPost.m in Sources */,
 				70E7210B1F4D668D00BE1D70 /* QuestionScroller.m in Sources */,
 				70E721081F4D668D00BE1D70 /* AppDelegate.m in Sources */,
 				70E7211D1F4D6BB100BE1D70 /* CustomCell.m in Sources */,
@@ -290,6 +379,7 @@
 		};
 		70E721181F4D668D00BE1D70 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52CBBF6C5384BEF6769321CA /* Pods-StackOverflowQuestionsProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StackOverflowQuestionsProject/Info.plist;
@@ -301,6 +391,7 @@
 		};
 		70E721191F4D668D00BE1D70 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5091DE0D9106E43152FBF5D /* Pods-StackOverflowQuestionsProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StackOverflowQuestionsProject/Info.plist;
@@ -329,6 +420,7 @@
 				70E721191F4D668D00BE1D70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

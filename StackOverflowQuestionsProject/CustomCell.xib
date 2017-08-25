@@ -16,13 +16,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sq4-1L-iIa">
-                    <rect key="frame" x="15" y="13" width="70" height="70"/>
+                    <rect key="frame" x="15" y="10" width="70" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBo-e4-wKJ">
-                            <rect key="frame" x="14" y="15" width="40" height="40"/>
+                            <rect key="frame" x="0.0" y="15" width="70" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -33,44 +33,52 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiR-wg-pzs">
-                    <rect key="frame" x="18" y="111" width="75" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="75" id="7pQ-Dy-HEq"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="25" y="112.5" width="48" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVU-LN-6Ti">
-                    <rect key="frame" x="318" y="104" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="334" y="120.5" width="31" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblQuestionTitle" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIo-WN-GqE">
+                    <rect key="frame" x="106" y="17" width="250" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblQuestionTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIo-WN-GqE">
-                    <rect key="frame" x="91" y="27" width="119" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="D8T-nE-AeX">
+                    <rect key="frame" x="102" y="69" width="220" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="n9J-nR-R0Q">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="oVU-LN-6Ti" secondAttribute="bottom" constant="15" id="1bh-dl-qVQ"/>
-                <constraint firstItem="hiR-wg-pzs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="18" id="Hi4-38-ekN"/>
-                <constraint firstAttribute="trailing" secondItem="oVU-LN-6Ti" secondAttribute="trailing" constant="15" id="TYh-dA-DDP"/>
-                <constraint firstAttribute="bottom" secondItem="hiR-wg-pzs" secondAttribute="bottom" constant="9" id="aka-ff-scX"/>
-                <constraint firstAttribute="trailing" secondItem="EIo-WN-GqE" secondAttribute="trailing" constant="165" id="lde-9g-3PD"/>
-                <constraint firstItem="oVU-LN-6Ti" firstAttribute="top" secondItem="EIo-WN-GqE" secondAttribute="bottom" constant="56" id="s3X-Pn-Aow"/>
+                <constraint firstAttribute="bottom" secondItem="hiR-wg-pzs" secondAttribute="bottom" constant="13" id="Ehc-bb-9Rg"/>
+                <constraint firstAttribute="bottom" secondItem="oVU-LN-6Ti" secondAttribute="bottom" constant="5" id="TY0-XM-Zwe"/>
+                <constraint firstItem="hiR-wg-pzs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="hAr-c1-6YV"/>
+                <constraint firstAttribute="trailing" secondItem="oVU-LN-6Ti" secondAttribute="trailing" constant="10" id="qCq-WB-I4f"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="collectionViewTags" destination="D8T-nE-AeX" id="plU-HV-dxa"/>
                 <outlet property="lblLastActivity" destination="oVU-LN-6Ti" id="Xy4-nv-dKV"/>
                 <outlet property="lblQuestionTitle" destination="EIo-WN-GqE" id="zL9-ih-MmZ"/>
                 <outlet property="lblViewCount" destination="vBo-e4-wKJ" id="Cam-M3-oiE"/>
                 <outlet property="viewIsAnswered" destination="sq4-1L-iIa" id="HLR-bE-qQ4"/>
             </connections>
-            <point key="canvasLocation" x="88" y="-1092"/>
+            <point key="canvasLocation" x="87.5" y="-1092"/>
         </view>
     </objects>
 </document>

@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblViewCount;
 @property (weak, nonatomic) IBOutlet UILabel *lblQuestionTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lblLastActivity;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionViewTags;
 
 @end

@@ -48,6 +48,9 @@
                             <constraint firstAttribute="bottom" secondItem="qnG-OK-CbH" secondAttribute="bottom" id="oj5-aa-pcB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableViewStackOverflowQuestions" destination="qnG-OK-CbH" id="dKC-Fe-1Qi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
