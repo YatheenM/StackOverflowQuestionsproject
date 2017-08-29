@@ -15,6 +15,7 @@
 @synthesize questionAnswers = _questionAnswers;
 @synthesize isAnswered = _isAnswered;
 @synthesize answerCount = _answerCount;
-@synthesize lastActivityDate =_lastActivityDate;
+@synthesize creationDate =_creationDate;
+@synthesize tags = _tags;
 
 @end

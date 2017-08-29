@@ -49,13 +49,11 @@ UILabel *label = nil;
      {
     
      question = [[Question alloc]init];
-     
      [question setQuestionTitle:[dic valueForKey:@"title"]];
      int answerCount = [[dic objectForKey:@"answer_count"] intValue];
      [question setQuestionAnswers: answerCount];
-     NSLog(@"%@ HUH", [question answerCount]);
-     [question setLastActivityDate:[dic valueForKey:@"last_activity_date"]];
-     NSLog(@"%@ Hello from the other side...!", [question questionTitle]);
+     long lastActivity = [[dic valueForKey:@"creation_date"] longValue];
+     [question setCreationDate: lastActivity];
      NSString *isSet = [dic valueForKey:@"is_answered"];
      if ([isSet  isEqual: @"true"]){
      [question setIsAnswered:YES];
@@ -91,6 +89,30 @@ UILabel *label = nil;
     // Dispose of any resources that can be recreated.
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    /*static NSString *headerCellIdentifier = @"CustomHeaderCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:headerCellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:headerCellIdentifier];
+    }
+
+    return cell;*/
+     
+     return @"iOS";
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    static NSString *HeaderCellIdentifier = @"CustomHeaderCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HeaderCellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:HeaderCellIdentifier];
+    }    
+    return cell;
+}
+
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [questions count];
 }
@@ -117,7 +139,12 @@ UILabel *label = nil;
     }
     
     cell.lblViewCount.text = [NSString stringWithFormat:@"%i", [q questionAnswers]];
-    cell.lblLastActivity.text = @"3 hours ago";//[question lastActivityDate];`
+    
+  
+    long creationDateInHours  = ([q creationDate])/(1000*3600);
+    
+    
+    cell.lblLastActivity.text = [NSString stringWithFormat:@"%ld hours ago", creationDateInHours];
     cell.viewIsAnswered.layer.cornerRadius = cell.viewIsAnswered.bounds.size.width*0.5;
     cell.viewIsAnswered.layer.masksToBounds = YES;
 

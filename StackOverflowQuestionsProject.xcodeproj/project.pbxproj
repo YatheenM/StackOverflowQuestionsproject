@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		702918621F4D9CB8009C3BCA /* StackOverflowPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 702918611F4D9CB8009C3BCA /* StackOverflowPost.m */; };
+		709396A51F55486000CECF4A /* CustomHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 709396A41F55486000CECF4A /* CustomHeaderCell.m */; };
+		709396A71F55488500CECF4A /* CustomHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 709396A61F55488500CECF4A /* CustomHeaderCell.xib */; };
 		70E721051F4D668D00BE1D70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E721041F4D668D00BE1D70 /* main.m */; };
 		70E721081F4D668D00BE1D70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E721071F4D668D00BE1D70 /* AppDelegate.m */; };
 		70E7210B1F4D668D00BE1D70 /* QuestionScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E7210A1F4D668D00BE1D70 /* QuestionScroller.m */; };
@@ -24,6 +26,9 @@
 		52CBBF6C5384BEF6769321CA /* Pods-StackOverflowQuestionsProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowQuestionsProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflowQuestionsProject/Pods-StackOverflowQuestionsProject.debug.xcconfig"; sourceTree = "<group>"; };
 		702918601F4D9CA2009C3BCA /* StackOverflowPost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StackOverflowPost.h; sourceTree = "<group>"; };
 		702918611F4D9CB8009C3BCA /* StackOverflowPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackOverflowPost.m; sourceTree = "<group>"; };
+		709396A31F55486000CECF4A /* CustomHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHeaderCell.h; sourceTree = "<group>"; };
+		709396A41F55486000CECF4A /* CustomHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeaderCell.m; sourceTree = "<group>"; };
+		709396A61F55488500CECF4A /* CustomHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHeaderCell.xib; sourceTree = "<group>"; };
 		70E721001F4D668D00BE1D70 /* StackOverflowQuestionsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflowQuestionsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E721041F4D668D00BE1D70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70E721061F4D668D00BE1D70 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,6 +74,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		709396A21F55482C00CECF4A /* CustomCellTableHeader */ = {
+			isa = PBXGroup;
+			children = (
+				709396A31F55486000CECF4A /* CustomHeaderCell.h */,
+				709396A41F55486000CECF4A /* CustomHeaderCell.m */,
+				709396A61F55488500CECF4A /* CustomHeaderCell.xib */,
+			);
+			name = CustomCellTableHeader;
+			sourceTree = "<group>";
+		};
 		70E720F71F4D668D00BE1D70 = {
 			isa = PBXGroup;
 			children = (
@@ -90,8 +105,9 @@
 		70E721021F4D668D00BE1D70 /* StackOverflowQuestionsProject */ = {
 			isa = PBXGroup;
 			children = (
+				709396A21F55482C00CECF4A /* CustomCellTableHeader */,
 				70F6256D1F4D8D3F0085C9C8 /* Model */,
-				70E7211A1F4D6B4200BE1D70 /* CustomCell */,
+				70E7211A1F4D6B4200BE1D70 /* CustomCellTableBody */,
 				70E721061F4D668D00BE1D70 /* AppDelegate.h */,
 				70E721071F4D668D00BE1D70 /* AppDelegate.m */,
 				70E721091F4D668D00BE1D70 /* QuestionScroller.h */,
@@ -113,14 +129,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		70E7211A1F4D6B4200BE1D70 /* CustomCell */ = {
+		70E7211A1F4D6B4200BE1D70 /* CustomCellTableBody */ = {
 			isa = PBXGroup;
 			children = (
 				70E7211B1F4D6BB100BE1D70 /* CustomCell.h */,
 				70E7211C1F4D6BB100BE1D70 /* CustomCell.m */,
 				70E7211E1F4D6C2600BE1D70 /* CustomCell.xib */,
 			);
-			name = CustomCell;
+			name = CustomCellTableBody;
 			sourceTree = "<group>";
 		};
 		70F6256D1F4D8D3F0085C9C8 /* Model */ = {
@@ -196,6 +212,7 @@
 				70E721131F4D668D00BE1D70 /* LaunchScreen.storyboard in Resources */,
 				70E721101F4D668D00BE1D70 /* Assets.xcassets in Resources */,
 				70E7211F1F4D6C2600BE1D70 /* CustomCell.xib in Resources */,
+				709396A71F55488500CECF4A /* CustomHeaderCell.xib in Resources */,
 				70E7210E1F4D668D00BE1D70 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				702918621F4D9CB8009C3BCA /* StackOverflowPost.m in Sources */,
+				709396A51F55486000CECF4A /* CustomHeaderCell.m in Sources */,
 				70E7210B1F4D668D00BE1D70 /* QuestionScroller.m in Sources */,
 				70E721081F4D668D00BE1D70 /* AppDelegate.m in Sources */,
 				70E7211D1F4D6BB100BE1D70 /* CustomCell.m in Sources */,

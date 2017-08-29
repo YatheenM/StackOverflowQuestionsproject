@@ -38,8 +38,8 @@
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVU-LN-6Ti">
-                    <rect key="frame" x="334" y="120.5" width="31" height="14.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVU-LN-6Ti">
+                    <rect key="frame" x="230" y="121" width="135" height="15"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="D8T-nE-AeX">
-                    <rect key="frame" x="102" y="69" width="220" height="50"/>
+                    <rect key="frame" x="102" y="59" width="220" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="n9J-nR-R0Q">
@@ -66,7 +66,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="hiR-wg-pzs" secondAttribute="bottom" constant="13" id="Ehc-bb-9Rg"/>
-                <constraint firstAttribute="bottom" secondItem="oVU-LN-6Ti" secondAttribute="bottom" constant="5" id="TY0-XM-Zwe"/>
+                <constraint firstAttribute="bottom" secondItem="oVU-LN-6Ti" secondAttribute="bottom" constant="4" id="TY0-XM-Zwe"/>
                 <constraint firstItem="hiR-wg-pzs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="hAr-c1-6YV"/>
                 <constraint firstAttribute="trailing" secondItem="oVU-LN-6Ti" secondAttribute="trailing" constant="10" id="qCq-WB-I4f"/>
             </constraints>

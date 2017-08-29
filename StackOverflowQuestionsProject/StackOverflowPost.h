@@ -14,10 +14,11 @@
 
 @interface Question : NSObject
 
-     @property (atomic, copy) NSString *questionTitle;
-     @property (atomic) int questionAnswers;
-     @property (atomic) BOOL isAnswered;
-     @property (atomic, copy) NSString *answerCount;
-     @property (atomic, copy) NSString *lastActivityDate;
+     @property (nonatomic, copy) NSString *questionTitle;
+     @property (nonatomic) int questionAnswers;
+     @property (nonatomic) BOOL isAnswered;
+     @property (nonatomic, copy) NSString *answerCount;
+     @property (nonatomic) long creationDate;
+     @property (nonatomic, copy) NSMutableArray *tags;
 
 @end
