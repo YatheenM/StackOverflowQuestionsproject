@@ -61,7 +61,8 @@ UILabel *label = nil;
             [question setCreationDate: lastActivity];
             BOOL isSet = [[dic valueForKey:@"is_answered"] boolValue];
             [question setIsAnswered:isSet];
-            
+            NSArray *arrTags = [dic mutableArrayValueForKey:@"tags"];
+            [question setTags:arrTags];
             [questions addObject:question];
         }
     
@@ -73,6 +74,10 @@ UILabel *label = nil;
     }];
     
     [operation start];
+    
+    for(int i = 0; i <= 2; i++){
+        NSLog(@"%@", question.tags[i]);
+    }
     
     NSLog(@"JSON Retrieved");
     NSLog(@"DONE");
@@ -103,10 +108,16 @@ UILabel *label = nil;
     cell.lblQuestionTitle.text = [q questionTitle];
     
     if([q isAnswered] == true){
-        cell.viewIsAnswered.backgroundColor  = [UIColor greenColor];
+        cell.viewIsAnswered.backgroundColor  = [UIColor colorWithRed:47.0f/255.0f
+                                                               green:255.0f/255.0f
+                                                                blue:141.0f/255.0f
+                                                               alpha:1.0f];
     }
     else if ([q isAnswered] == false){
-        cell.viewIsAnswered.backgroundColor = [UIColor lightGrayColor];
+        cell.viewIsAnswered.backgroundColor = [UIColor colorWithRed:217.0f/255.0f
+                                                              green:217.0f/255.0f
+                                                               blue:217.0f/255.0f
+                                                              alpha:1.0f];
     }
     
     cell.lblViewCount.text = [NSString stringWithFormat:@"%i", [q questionAnswers]];
@@ -123,19 +134,29 @@ UILabel *label = nil;
     int buttonHeight=30;
     int buffer = 10;
     
-    for (i = 1; i <= 2; i++)
+    for (i = 0; i < [q.tags count]; i++)
     {
         UIButton *aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        aButton.frame     = CGRectMake(yCoord,xCoord,buttonWidth,buttonHeight );
-        //[aButton addTarget:self action:@selector(whatever:) forControlEvents:UIControlEventTouchUpInside];
-        [aButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        aButton.frame     = CGRectMake(xCoord,yCoord,buttonWidth,buttonHeight );
+        [aButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [aButton setBackgroundColor:[UIColor colorWithRed:217.0f/255.0f
+                                                    green:217.0f/255.0f
+                                                     blue:217.0f/255.0f
+                                                    alpha:1.0f]];
+        [aButton setEnabled:false];
         aButton.layer.borderWidth = 2.0f;
-        aButton.layer.borderColor = [UIColor blackColor].CGColor;
+        aButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        aButton.titleLabel.numberOfLines = 1;
+        aButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+        aButton.titleLabel.lineBreakMode = NSLineBreakByClipping;
+        [[aButton layer] setCornerRadius:8.0f];
         [cell.scrlViewTags addSubview:aButton];
-        [aButton setTitle: @"myTitle" forState: UIControlStateNormal];
-        yCoord += buttonWidth + buffer;
+        [aButton setTitle:q.tags[i] forState: UIControlStateNormal];
+        xCoord += buttonWidth + buffer;
     }
-    //cell.scrlViewTags setContentSize:CGSizeMake(700, yCoord)];
+    
+    cell.scrlViewTags.pagingEnabled = true;
+    [cell.scrlViewTags setContentSize:CGSizeMake(xCoord, 0)];
     return cell;
 }
 

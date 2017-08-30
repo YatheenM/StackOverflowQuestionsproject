@@ -19,6 +19,6 @@
      @property (nonatomic) BOOL isAnswered;
      @property (nonatomic, copy) NSString *answerCount;
      @property (nonatomic) long creationDate;
-     @property (nonatomic, copy) NSMutableArray *tags;
+     @property (nonatomic, copy) NSArray *tags;
 
 @end
