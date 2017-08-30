@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblLastActivity;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionViewTags;
 @property (weak, nonatomic) IBOutlet UIButton *btnDisplayIsAnswered;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewDisplayTags;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionviewCustom;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrlViewTags;
 
 @end

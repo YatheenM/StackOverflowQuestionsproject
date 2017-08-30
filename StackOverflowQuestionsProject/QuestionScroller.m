@@ -115,7 +115,27 @@ UILabel *label = nil;
     long creationDateInHours  = (currentTime - [q creationDate])/(1000*3600);
     
     cell.lblLastActivity.text = [NSString stringWithFormat:@"%ld hours ago", creationDateInHours];
-
+    
+    NSUInteger i;
+    int xCoord=0;
+    int yCoord=0;
+    int buttonWidth=100;
+    int buttonHeight=30;
+    int buffer = 10;
+    
+    for (i = 1; i <= 2; i++)
+    {
+        UIButton *aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        aButton.frame     = CGRectMake(yCoord,xCoord,buttonWidth,buttonHeight );
+        //[aButton addTarget:self action:@selector(whatever:) forControlEvents:UIControlEventTouchUpInside];
+        [aButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        aButton.layer.borderWidth = 2.0f;
+        aButton.layer.borderColor = [UIColor blackColor].CGColor;
+        [cell.scrlViewTags addSubview:aButton];
+        [aButton setTitle: @"myTitle" forState: UIControlStateNormal];
+        yCoord += buttonWidth + buffer;
+    }
+    //cell.scrlViewTags setContentSize:CGSizeMake(700, yCoord)];
     return cell;
 }
 

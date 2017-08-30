@@ -33,7 +33,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiR-wg-pzs">
-                    <rect key="frame" x="25" y="112.5" width="48" height="14.5"/>
+                    <rect key="frame" x="25" y="112" width="48" height="15"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -51,31 +51,35 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjE-O6-5aE">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjE-O6-5aE">
                     <rect key="frame" x="105" y="64" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-CG-Jar">
-                    <rect key="frame" x="110" y="54" width="240" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9Q-70-12y">
+                    <rect key="frame" x="105" y="60" width="265" height="58"/>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="p9Q-70-12y" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="5Ci-P9-DKx"/>
+                <constraint firstItem="oVU-LN-6Ti" firstAttribute="top" secondItem="p9Q-70-12y" secondAttribute="bottom" constant="3" id="64Y-Lu-hAZ"/>
+                <constraint firstAttribute="trailing" secondItem="p9Q-70-12y" secondAttribute="trailing" constant="5" id="89K-cX-Nkg"/>
                 <constraint firstAttribute="bottom" secondItem="hiR-wg-pzs" secondAttribute="bottom" constant="13" id="Ehc-bb-9Rg"/>
+                <constraint firstItem="p9Q-70-12y" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="105" id="Rkp-ii-8Ao"/>
                 <constraint firstAttribute="bottom" secondItem="oVU-LN-6Ti" secondAttribute="bottom" constant="4" id="TY0-XM-Zwe"/>
                 <constraint firstItem="hiR-wg-pzs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="hAr-c1-6YV"/>
+                <constraint firstItem="p9Q-70-12y" firstAttribute="centerY" secondItem="vjE-O6-5aE" secondAttribute="centerY" constant="14.5" id="kMX-rh-vcp"/>
                 <constraint firstAttribute="trailing" secondItem="oVU-LN-6Ti" secondAttribute="trailing" constant="10" id="qCq-WB-I4f"/>
+                <constraint firstItem="p9Q-70-12y" firstAttribute="leading" secondItem="vjE-O6-5aE" secondAttribute="leading" id="qbI-CE-xo5"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="lblLastActivity" destination="oVU-LN-6Ti" id="Xy4-nv-dKV"/>
                 <outlet property="lblQuestionTitle" destination="EIo-WN-GqE" id="zL9-ih-MmZ"/>
                 <outlet property="lblViewCount" destination="vBo-e4-wKJ" id="Cam-M3-oiE"/>
-                <outlet property="scrollViewDisplayTags" destination="MiC-CG-Jar" id="y2K-IF-fIh"/>
+                <outlet property="scrlViewTags" destination="p9Q-70-12y" id="78f-v1-Bc6"/>
                 <outlet property="viewIsAnswered" destination="sq4-1L-iIa" id="HLR-bE-qQ4"/>
             </connections>
             <point key="canvasLocation" x="87.5" y="-1092"/>
