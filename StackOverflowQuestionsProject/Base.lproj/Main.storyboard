@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hi8-Mz-0yv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Questions-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Questions" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,38 +22,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qnG-OK-CbH">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qnG-OK-CbH">
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stackOverflowQuestion" rowHeight="115" id="CV4-Xl-3DU" customClass="CustomCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="115"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CV4-Xl-3DU" id="xPP-iK-69N">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="114.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="ajg-Le-UCV"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="UQJ-C7-Fdt"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qM3-Sd-kOX">
+                                <rect key="frame" x="1" y="64" width="375" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qnG-OK-CbH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="43Y-OR-nq4"/>
-                            <constraint firstItem="qnG-OK-CbH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ZQg-BV-MRr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qnG-OK-CbH" secondAttribute="bottom" id="NM8-Qd-XeV"/>
+                            <constraint firstItem="qM3-Sd-kOX" firstAttribute="width" secondItem="qnG-OK-CbH" secondAttribute="width" id="USj-1F-W7M"/>
+                            <constraint firstItem="qnG-OK-CbH" firstAttribute="top" secondItem="qM3-Sd-kOX" secondAttribute="bottom" id="Ydh-ii-4Un"/>
+                            <constraint firstItem="qnG-OK-CbH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="ZQg-BV-MRr"/>
                             <constraint firstAttribute="trailing" secondItem="qnG-OK-CbH" secondAttribute="trailing" id="b5H-ff-ll1"/>
-                            <constraint firstAttribute="bottom" secondItem="qnG-OK-CbH" secondAttribute="bottom" id="oj5-aa-pcB"/>
+                            <constraint firstItem="qnG-OK-CbH" firstAttribute="top" secondItem="qM3-Sd-kOX" secondAttribute="bottom" id="hyq-4d-hgf"/>
+                            <constraint firstItem="qM3-Sd-kOX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="m3f-l6-jbx"/>
+                            <constraint firstItem="qnG-OK-CbH" firstAttribute="top" secondItem="qM3-Sd-kOX" secondAttribute="bottom" id="peo-pp-QfR"/>
+                            <constraint firstItem="qM3-Sd-kOX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="sgn-9K-Rfv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Questions" id="pYp-Gc-VvE"/>
                     <connections>
+                        <outlet property="lblTableTitle" destination="qM3-Sd-kOX" id="dCc-gx-87t"/>
                         <outlet property="tableViewStackOverflowQuestions" destination="qnG-OK-CbH" id="dKC-Fe-1Qi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="38.23088455772114"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="H1M-i9-vcC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hi8-Mz-0yv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="KPT-yx-BCb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nXq-F3-MrP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SoP-45-fOq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>

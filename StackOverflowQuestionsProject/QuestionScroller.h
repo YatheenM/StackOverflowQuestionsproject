@@ -12,6 +12,7 @@
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewStackOverflowQuestions;
+@property (weak, nonatomic) IBOutlet UILabel *lblTableTitle;
 
 @end
 

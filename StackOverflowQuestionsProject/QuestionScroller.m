@@ -21,96 +21,65 @@ UILabel *label = nil;
 
 @implementation ViewController
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    
-     questions = [[NSMutableArray alloc]init];
-     
-     question = [[Question alloc]init];
-    
-     NSURL *url = [NSURL URLWithString:BaseURLString];
-     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+- (void)viewWillAppear:(BOOL)animated{
 
-     operation.responseSerializer = [AFJSONResponseSerializer serializer];
-     
-     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-     
-     
-     NSDictionary *dictionary = (NSDictionary *) responseObject;
-     
-     for(NSDictionary *dic in [dictionary objectForKey:@"items"])
-     {
-    
-     question = [[Question alloc]init];
-     [question setQuestionTitle:[dic valueForKey:@"title"]];
-     int answerCount = [[dic objectForKey:@"answer_count"] intValue];
-     [question setQuestionAnswers: answerCount];
-     long lastActivity = [[dic valueForKey:@"creation_date"] longValue];
-     [question setCreationDate: lastActivity];
-     NSString *isSet = [dic valueForKey:@"is_answered"];
-     if ([isSet  isEqual: @"true"]){
-     [question setIsAnswered:YES];
-     }
-     else{
-     [question setIsAnswered:NO];
-     }
-     [questions addObject:question];
-     }
-
-        [self.tableViewStackOverflowQuestions reloadData];
-     }
-    
-    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     
-     NSLog(@"An error has occured");
-     }];
-    
-     [operation start];
-     
-     NSLog(@"JSON Retrieved");
-     NSLog(@"DONE");
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
-    /*static NSString *headerCellIdentifier = @"CustomHeaderCell";
+    _lblTableTitle.text = @"Questions tagged \"iOS\"";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:headerCellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:headerCellIdentifier];
+    questions = [[NSMutableArray alloc]init];
+    
+    question = [[Question alloc]init];
+    
+    NSURL *url = [NSURL URLWithString:BaseURLString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        NSDictionary *dictionary = (NSDictionary *) responseObject;
+        
+        for(NSDictionary *dic in [dictionary objectForKey:@"items"])
+        {
+            
+            question = [[Question alloc]init];
+            [question setQuestionTitle:[dic valueForKey:@"title"]];
+            int answerCount = [[dic objectForKey:@"answer_count"] intValue];
+            [question setQuestionAnswers: answerCount];
+            long lastActivity = [[dic valueForKey:@"creation_date"] longValue];
+            [question setCreationDate: lastActivity];
+            BOOL isSet = [[dic valueForKey:@"is_answered"] boolValue];
+            [question setIsAnswered:isSet];
+            
+            NSLog(@"%i", isSet);
+            
+            [questions addObject:question];
+        }
+    
+        [self.tableViewStackOverflowQuestions reloadData];
     }
-
-    return cell;*/
      
-     return @"iOS";
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    static NSString *HeaderCellIdentifier = @"CustomHeaderCell";
+    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"An error has occured");
+    }];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HeaderCellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:HeaderCellIdentifier];
-    }    
-    return cell;
+    [operation start];
+    
+    NSLog(@"JSON Retrieved");
+    NSLog(@"DONE");
+    
+    //[self.tableViewStackOverflowQuestions reloadData];
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -129,12 +98,18 @@ UILabel *label = nil;
         NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"CustomCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-        
+    
+    cell.viewIsAnswered.layer.cornerRadius = cell.viewIsAnswered.bounds.size.width*0.5;
+    cell.viewIsAnswered.layer.masksToBounds = YES;
+    
     cell.lblQuestionTitle.text = [q questionTitle];
-    if([question isAnswered]){
+    
+    if([question isAnswered] == true){
+        //cell.lblQuestionTitle.backgroundColor = [UIColor greenColor];
         cell.viewIsAnswered.backgroundColor  = [UIColor greenColor];
     }
-    else{
+    else if ([question isAnswered] == false){
+        //cell.lblQuestionTitle.backgroundColor = [UIColor lightGrayColor];
         cell.viewIsAnswered.backgroundColor = [UIColor lightGrayColor];
     }
     
@@ -145,8 +120,7 @@ UILabel *label = nil;
     
     
     cell.lblLastActivity.text = [NSString stringWithFormat:@"%ld hours ago", creationDateInHours];
-    cell.viewIsAnswered.layer.cornerRadius = cell.viewIsAnswered.bounds.size.width*0.5;
-    cell.viewIsAnswered.layer.masksToBounds = YES;
+
 
     return cell;
 }
