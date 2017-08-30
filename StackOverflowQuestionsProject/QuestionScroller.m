@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import "StackOverflowPost.h"
 
-static NSString * const BaseURLString = @"https://api.stackexchange.com/2.2/questions?order=desc&sort=activity&site=stackoverflow";
+static NSString * const BaseURLString = @"https://api.stackexchange.com/2.2/questions?pagesize=50&order=desc&sort=activity&tagged=ios&site=stackoverflow";
 Question *question = nil;
 NSMutableArray *questions;
 UILabel *label = nil;
@@ -62,8 +62,6 @@ UILabel *label = nil;
             BOOL isSet = [[dic valueForKey:@"is_answered"] boolValue];
             [question setIsAnswered:isSet];
             
-            NSLog(@"%i", isSet);
-            
             [questions addObject:question];
         }
     
@@ -91,36 +89,32 @@ UILabel *label = nil;
     static NSString *stackOverflowQuestion = @"CustomCell";
     
     CustomCell *cell= (CustomCell *)[tableView dequeueReusableCellWithIdentifier:stackOverflowQuestion];
-
-    Question *q = questions[indexPath.row];
-    
     if (cell == nil){
         NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"CustomCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    
+    Question *q = questions[indexPath.row];
+    
     
     cell.viewIsAnswered.layer.cornerRadius = cell.viewIsAnswered.bounds.size.width*0.5;
     cell.viewIsAnswered.layer.masksToBounds = YES;
     
     cell.lblQuestionTitle.text = [q questionTitle];
     
-    if([question isAnswered] == true){
-        //cell.lblQuestionTitle.backgroundColor = [UIColor greenColor];
+    if([q isAnswered] == true){
         cell.viewIsAnswered.backgroundColor  = [UIColor greenColor];
     }
-    else if ([question isAnswered] == false){
-        //cell.lblQuestionTitle.backgroundColor = [UIColor lightGrayColor];
+    else if ([q isAnswered] == false){
         cell.viewIsAnswered.backgroundColor = [UIColor lightGrayColor];
     }
     
     cell.lblViewCount.text = [NSString stringWithFormat:@"%i", [q questionAnswers]];
     
-  
-    long creationDateInHours  = ([q creationDate])/(1000*3600);
-    
+    long currentTime = (long)(NSTimeInterval)([[NSDate date] timeIntervalSince1970]);
+    long creationDateInHours  = (currentTime - [q creationDate])/(1000*3600);
     
     cell.lblLastActivity.text = [NSString stringWithFormat:@"%ld hours ago", creationDateInHours];
-
 
     return cell;
 }
